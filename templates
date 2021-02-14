@@ -38,3 +38,27 @@ class Calculator{
 int main(){
   
 }
+
+
+
+
+template <class T>
+class Stack{
+  private:
+    List<T> list1;
+    
+  public:
+    void push(T);
+    T pop();
+    bool isEmpty();
+};
+
+void Stack<T>::push(T x){
+  list1.insertHead(x);
+}
+
+T Stack<T>::pop(){
+  T item = list1.headItem();
+  list1.removeHead();
+  return item;
+}
