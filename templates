@@ -62,3 +62,13 @@ T Stack<T>::pop(){
   list1.removeHead();
   return item;
 }
+
+void setupEINT()
+{
+  // Configure INT0 and INT1 for rising edge triggered.
+  // Remember to enable INT0 and INT1 interrupts.
+  cli();
+  EICRA |= 0b00001111;
+  EIMSK |= 0b00000011;
+  sei();
+}
